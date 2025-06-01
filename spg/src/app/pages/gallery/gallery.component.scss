@@ -1,0 +1,69 @@
+.gallery-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .grid-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.05);
+  }
+  
+  .thumb-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+  }
+  
+  .modal-img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+  
+  .modal-caption {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0 0 8px 8px;
+  }
+  

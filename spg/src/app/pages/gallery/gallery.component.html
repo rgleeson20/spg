@@ -1,2 +1,29 @@
-<h1>Gallery</h1>
-<p>Here will go images.</p>
+<div class="gallery-container">
+  <div class="grid">
+    <div
+      *ngFor="let img of images"
+      class="grid-item"
+      (click)="openImage(img)"
+    >
+      <img
+        [src]="img.thumb"
+        [alt]="img.alt"
+        loading="lazy"
+        class="thumb-img"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div *ngIf="selectedImage" class="modal" (click)="closeImage()">
+  <div class="modal-content">
+    <img
+      [src]="selectedImage.full"
+      [alt]="selectedImage.alt"
+      class="modal-img"
+    />
+    <div class="modal-caption">{{ selectedImage.alt }}</div>
+  </div>
+</div>
+  
