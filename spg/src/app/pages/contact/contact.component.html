@@ -1,2 +1,56 @@
-<h1>Contact</h1>
-<p>Contact form will go here.</p>
+<div class="contact-wrapper">
+    <h1>Contact</h1>
+  
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          [class.invalid]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched"
+        />
+        <div class="error" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+          Name is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          formControlName="email"
+          [class.invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+        />
+        <div class="error" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+          Enter a valid email.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          rows="6"
+          formControlName="message"
+          [class.invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"
+        ></textarea>
+        <div class="error" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+          Message must be at least 20 characters.
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="submitting">
+        {{ submitting ? 'Sending…' : 'Send Message' }}
+      </button>
+    </form>
+  
+    <div class="feedback success" *ngIf="successMessage">
+      {{ successMessage }}
+    </div>
+    <div class="feedback error" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+  </div>
+  
