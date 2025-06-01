@@ -40,6 +40,8 @@
           },
           "configurations": {
             "production": {
+              "baseHref": "/spg/",
+              "deployUrl": "/spg/",
               "budgets": [
                 {
                   "type": "initial",
@@ -102,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

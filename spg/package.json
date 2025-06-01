@@ -7,8 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "predeploy": "npm run build -- --configuration=production && ng run spg:prerender",
-    "deploy": "npx angular-cli-ghpages --dir=dist/spg/browser"
+   "predeploy": "ng build --configuration production --base-href https://rgleeson20.github.io/spg/",
+    "deploy": "npx angular-cli-ghpages --dir=dist/spg/browser --no-silent --repo=https://github.com/rgleeson20/spg.git"
   },
   "private": true,
   "dependencies": {
