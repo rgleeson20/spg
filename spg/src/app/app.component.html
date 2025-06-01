@@ -1,11 +1,20 @@
-<header class="site-header">
-  <nav>
-    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <a routerLink="gallery" routerLinkActive="active">Gallery</a>
-    <a routerLink="about" routerLinkActive="active">About</a>
-    <a routerLink="contact" routerLinkActive="active">Contact</a>
-  </nav>
-</header>
-<main>
-  <router-outlet></router-outlet>
-</main>
+<div class="min-h-screen bg-gray-100">
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <h1 class="text-3xl font-bold text-gray-900">Sarah P Gleeson</h1>
+        <nav class="flex space-x-4">
+          <a routerLink="" routerLinkActive="text-blue-600" [routerLinkActiveOptions]="{ exact: true }" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+          <a routerLink="gallery" routerLinkActive="text-blue-600" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Gallery</a>
+          <a routerLink="about" routerLinkActive="text-blue-600" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">About</a>
+          <a routerLink="contact" routerLinkActive="text-blue-600" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
