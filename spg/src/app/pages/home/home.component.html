@@ -1,2 +1,13 @@
-<h1>Home</h1>
-<p>Welcome to the Home page.</p>
+<div class="carousel-container">
+  <swiper-container #swiper init="false">
+    <swiper-slide *ngFor="let img of heroImages">
+      <img
+        [src]="img.src"
+        [alt]="img.alt"
+        class="carousel-image"
+        loading="lazy"
+      />
+    </swiper-slide>
+  </swiper-container>
+</div>
+  
