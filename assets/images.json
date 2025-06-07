@@ -1,0 +1,72 @@
+[
+    {
+        "thumb": "assets/thumb/image1.webp",
+        "full": "assets/full/image1.jpg",
+        "alt": "Artwork 1",
+        "title": "Artwork 1",
+        "displayOnHomePage": true
+    },
+    {
+        "thumb": "assets/thumb/image2.webp",
+        "full": "assets/full/image2.jpg",
+        "alt": "Artwork 2",
+        "title": "Artwork 2",
+        "displayOnHomePage": false
+    },
+    {
+        "thumb": "assets/thumb/image3.webp",
+        "full": "assets/full/image3.jpg",
+        "alt": "Artwork 3",
+        "title": "Artwork 3",
+        "displayOnHomePage": false
+    },
+    {
+        "thumb": "assets/thumb/image4.webp",
+        "full": "assets/full/image4.jpg",
+        "alt": "Artwork 4",
+        "title": "Artwork 4",
+        "displayOnHomePage": false
+    },
+    {
+        "thumb": "assets/thumb/image5.webp",
+        "full": "assets/full/image5.jpg",
+        "alt": "Artwork 5",
+        "title": "Artwork 5",
+        "displayOnHomePage": false
+    },
+    {
+        "thumb": "assets/thumb/image6.webp",
+        "full": "assets/full/image6.jpg",
+        "alt": "Artwork 6",
+        "title": "Artwork 6",
+        "displayOnHomePage": true
+    },
+    {
+        "thumb": "assets/thumb/image7.webp",
+        "full": "assets/full/image7.jpg",
+        "alt": "Artwork 7",
+        "title": "Artwork 7",
+        "displayOnHomePage": false
+    },
+    {
+        "thumb": "assets/thumb/image8.webp",
+        "full": "assets/full/image8.jpg",
+        "alt": "Artwork 8",
+        "title": "Artwork 8",
+        "displayOnHomePage": true
+    },
+    {
+        "thumb": "assets/thumb/image9.webp",
+        "full": "assets/full/image9.jpg",
+        "alt": "Artwork 9",
+        "title": "Artwork 9",
+        "displayOnHomePage": false
+    },
+    {
+        "thumb": "assets/thumb/image10.webp",
+        "full": "assets/full/image10.jpg",
+        "alt": "Artwork 10",
+        "title": "Artwork 10",
+        "displayOnHomePage": false
+    }
+]
