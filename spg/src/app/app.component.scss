@@ -29,3 +29,31 @@
   main {
     padding-top: 16px;
   }
+
+  // Mobile menu styles
+  .mobile-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+
+  // Hamburger button animation
+  .hamburger-line {
+    transition: all 0.3s ease;
+  }
+
+  // Mobile menu link active state
+  .mobile-nav-link {
+    transition: all 0.3s ease;
+    
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+
+  // Ensure mobile menu overlay covers everything
+  .mobile-menu-overlay {
+    background-color: white;
+    backdrop-filter: blur(4px);
+  }
