@@ -3,14 +3,28 @@
     padding: 12px 24px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  nav a {
-    margin-right: 16px;
-    text-decoration: none;
-    color: #2c3e50;
-    font-weight: 500;
-  }
-  nav a.active {
-    text-decoration: underline;
+  nav {
+    a {
+      font-weight: 300;
+      position: relative;
+      display: inline-block;
+      
+      &:hover, &.active {
+        font-weight: 400;
+      }
+      
+      &.active::after {
+        content: '';
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        background-color: currentColor;
+        border-radius: 50%;
+      }
+    }
   }
   main {
     padding-top: 16px;

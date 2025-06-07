@@ -1,29 +1,33 @@
-<div class="gallery-container">
-  <div class="grid">
+<div class="max-w-7xl mx-auto px-6">
+  <h1 class="text-3xl tracking-widest uppercase mb-12 text-center">Gallery</h1>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     <div
       *ngFor="let img of images"
-      class="grid-item"
+      class="aspect-square cursor-pointer overflow-hidden"
       (click)="openImage(img)"
     >
       <img
         [src]="img.thumb"
         [alt]="img.alt"
         loading="lazy"
-        class="thumb-img"
+        class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
       />
     </div>
   </div>
 </div>
 
 <!-- Modal -->
-<div *ngIf="selectedImage" class="modal" (click)="closeImage()">
-  <div class="modal-content">
+<div *ngIf="selectedImage" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center" (click)="closeImage()">
+  <div class="max-w-7xl max-h-[90vh] relative">
     <img
       [src]="selectedImage.full"
       [alt]="selectedImage.alt"
-      class="modal-img"
+      class="max-w-full max-h-[90vh] object-contain"
     />
-    <div class="modal-caption">{{ selectedImage.alt }}</div>
+    <div class="absolute bottom-0 left-0 right-0 text-center py-4 text-white text-sm tracking-widest uppercase">
+      {{ selectedImage.alt }}
+    </div>
   </div>
 </div>
   

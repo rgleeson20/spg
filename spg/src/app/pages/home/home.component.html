@@ -1,13 +1,16 @@
-<div class="carousel-container">
-  <swiper-container #swiper init="false">
-    <swiper-slide *ngFor="let img of heroImages">
-      <img
-        [src]="img.src"
-        [alt]="img.alt"
-        class="carousel-image"
-        loading="lazy"
-      />
-    </swiper-slide>
-  </swiper-container>
+<div class="relative">
+  <!-- Full-width hero carousel -->
+  <div class="h-[80vh] relative overflow-hidden">
+    <swiper-container #swiper init="false">
+      <swiper-slide *ngFor="let img of heroImages">
+        <img
+          [src]="img.src"
+          [alt]="img.alt"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </swiper-slide>
+    </swiper-container>
+  </div>
 </div>
   
