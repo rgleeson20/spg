@@ -18,16 +18,43 @@
 </div>
 
 <!-- Modal -->
-<div *ngIf="selectedImage" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center" (click)="closeImage()">
+<div *ngIf="selectedImage" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center">
+  <!-- Close button -->
+  <button 
+    (click)="closeImage()" 
+    class="fixed top-8 right-8 text-white hover:text-gray-300 z-10 cursor-pointer"
+    aria-label="Close gallery">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <!-- Left navigation button -->
+  <button 
+    (click)="previousImage($event)" 
+    class="fixed left-8 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 z-10 cursor-pointer"
+    aria-label="Previous image">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+
+  <!-- Right navigation button -->
+  <button 
+    (click)="nextImage($event)" 
+    class="fixed right-8 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 z-10 cursor-pointer"
+    aria-label="Next image">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+
   <div class="max-w-7xl max-h-[90vh] relative">
     <img
       [src]="selectedImage.full"
       [alt]="selectedImage.alt"
       class="max-w-full max-h-[90vh] object-contain"
     />
-    <div class="absolute bottom-0 left-0 right-0 text-center py-4 text-white text-sm tracking-widest uppercase">
-      {{ selectedImage.alt }}
-    </div>
   </div>
 </div>
   

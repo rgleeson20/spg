@@ -29,4 +29,30 @@ export class GalleryComponent implements OnInit {
   closeImage(): void {
     this.selectedImage = null;
   }
+
+  previousImage(event: Event): void {
+    event.stopPropagation();
+    if (!this.selectedImage) return;
+    
+    const currentIndex = this.images.findIndex(img => img === this.selectedImage);
+    if (currentIndex > 0) {
+      this.selectedImage = this.images[currentIndex - 1];
+    } else {
+      // Wrap to the end if at the beginning
+      this.selectedImage = this.images[this.images.length - 1];
+    }
+  }
+
+  nextImage(event: Event): void {
+    event.stopPropagation();
+    if (!this.selectedImage) return;
+    
+    const currentIndex = this.images.findIndex(img => img === this.selectedImage);
+    if (currentIndex < this.images.length - 1) {
+      this.selectedImage = this.images[currentIndex + 1];
+    } else {
+      // Wrap to the beginning if at the end
+      this.selectedImage = this.images[0];
+    }
+  }
 }
