@@ -1,0 +1,51 @@
+nav {
+  a {
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+    
+    &:hover, &.active {
+      font-weight: 400;
+    }
+    
+    &.active::after {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      background-color: currentColor;
+      border-radius: 50%;
+    }
+  }
+}
+
+// Mobile menu styles
+:host-context(.mobile-menu-open) {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+// Hamburger button animation
+.hamburger-line {
+  transition: all 0.3s ease;
+}
+
+// Mobile menu link active state
+.mobile-nav-link {
+  transition: all 0.3s ease;
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+// Ensure mobile menu overlay covers everything
+.mobile-menu-overlay {
+  background-color: white;
+  backdrop-filter: blur(4px);
+} 
