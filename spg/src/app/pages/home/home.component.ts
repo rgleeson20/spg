@@ -36,11 +36,29 @@ export class HomeComponent implements AfterViewInit {
           delay: 4000,
           disableOnInteraction: false,
         },
+        width: null, // Let swiper calculate width automatically
         injectStyles: [
           `
-          .swiper-slide {
-            height: 100%;
+          :host {
             width: 100%;
+            height: 100%;
+            display: block;
+          }
+          .swiper {
+            width: 100%;
+            height: 100%;
+          }
+          .swiper-slide {
+            width: 100% !important;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
           `
         ],
