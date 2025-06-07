@@ -2,9 +2,14 @@
 
 @tailwind base;
 
-/* Override Tailwind's font system */
-:root {
-  --tw-font-sans: Quicksand;
+/* Force font applications */
+@layer base {
+  .font-body {
+    font-family: 'Open Sans', sans-serif !important;
+  }
+  .font-sans {
+    font-family: 'Quicksand', sans-serif !important;
+  }
 }
 
 @import 'swiper/css';
@@ -38,6 +43,5 @@ swiper-slide {
     --color-background: 255 255 255;
     --color-body: 17 24 39;
     --color-accent: 220 38 38;
-    --font-sans: 'Quicksand', sans-serif;
   }
 }

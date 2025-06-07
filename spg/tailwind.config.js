@@ -2,6 +2,12 @@
 module.exports = {
   content: ['./src/**/*.{html,ts,scss}'],
   theme: {
+    fontFamily: {
+      sans: ['Quicksand', 'sans-serif'],
+      body: ['Open Sans', 'sans-serif'],
+      serif: ['"Times New Roman"', 'Georgia', 'serif'],
+      mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace']
+    },
     extend: {
       colors: {
         body: '#000000',
