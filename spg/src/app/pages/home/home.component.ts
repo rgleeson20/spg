@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { NgFor } from '@angular/common';
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { register } from 'swiper/element/bundle';
+import { ImageService } from '../../services/image.service';
+import { Image } from '../../models/image.model';
 
 register(); // Register Swiper custom elements
 
@@ -16,13 +18,26 @@ register(); // Register Swiper custom elements
 export class HomeComponent implements AfterViewInit {
   @ViewChild('swiper') swiperRef!: ElementRef;
 
-  // List all hero images here:
-  heroImages = [
-    { src: 'assets/heroes/hero1.jpg', alt: 'Artwork 1' },
-    { src: 'assets/heroes/hero2.jpg', alt: 'Artwork 2' }
-  ];
+  heroImages: Image[] = [];
+
+  constructor(private imageService: ImageService) {}
+
+  ngOnInit() {
+    this.imageService.getHeroImages().subscribe((images) => {
+      this.heroImages = images;
+      // Initialize swiper after images are loaded
+      setTimeout(() => this.initializeSwiper(), 0);
+    });
+  }
 
   ngAfterViewInit() {
+    // Only initialize if we already have images
+    if (this.heroImages.length > 0) {
+      this.initializeSwiper();
+    }
+  }
+
+  private initializeSwiper() {
     const swiperEl = this.swiperRef?.nativeElement;
     if (swiperEl) {
       const swiperParams = {

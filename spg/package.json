@@ -9,7 +9,8 @@
     "test": "ng test",
     "serve": "ng serve --host 0.0.0.0 --port 4200",
     "predeploy": "ng build --configuration production --base-href / --deploy-url /",
-    "deploy": "npx angular-cli-ghpages --dir=dist/spg/browser --no-silent --cname=sarahpgleeson.com"
+    "deploy": "npx angular-cli-ghpages --dir=dist/spg/browser --no-silent --cname=sarahpgleeson.com",
+    "thumbs": "node scripts/generate-thumbs.js"
   },
   "private": true,
   "dependencies": {
@@ -21,8 +22,10 @@
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.14",
     "@tailwindcss/postcss": "^4.1.8",
+    "glob": "^10.3.10",
     "postcss": "^8.5.4",
     "rxjs": "~7.8.0",
+    "sharp": "^0.34.2",
     "tailwindcss": "^4.1.8",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

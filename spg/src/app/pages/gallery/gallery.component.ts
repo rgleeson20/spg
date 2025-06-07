@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-
-interface GalleryImage {
-  thumb: string;
-  full: string;
-  alt: string;
-}
+import { ImageService } from '../../services/image.service';
+import { Image } from '../../models/image.model';
 
 @Component({
   selector: 'app-gallery',
@@ -16,21 +11,18 @@ interface GalleryImage {
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  images: GalleryImage[] = [];
-  selectedImage: GalleryImage | null = null;
+  images: Image[] = [];
+  selectedImage: Image | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private imageService: ImageService) {}
 
   ngOnInit(): void {
-    // Load the JSON manifest
-    this.http
-      .get<GalleryImage[]>('assets/gallery/images.json')
-      .subscribe((data) => {
-        this.images = data;
-      });
+    this.imageService.getImages().subscribe((images) => {
+      this.images = images;
+    });
   }
 
-  openImage(image: GalleryImage): void {
+  openImage(image: Image): void {
     this.selectedImage = image;
   }
 

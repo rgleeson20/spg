@@ -5,10 +5,10 @@
       <swiper-container #swiper init="false">
         <swiper-slide *ngFor="let img of heroImages">
           <img
-            [src]="img.src"
+            [src]="img.full"
             [alt]="img.alt"
             class="w-full h-full object-cover"
-            loading="lazy"
+            loading="eager"
           />
         </swiper-slide>
       </swiper-container>
